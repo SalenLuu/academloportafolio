@@ -1,9 +1,12 @@
 :root {
-    --bg-header: #fef2f2;
-    --orange: #f26440;
-    --green: #286f6c;
-    --letra: #adadad;
+    --pink: #febcc8;
+    --lightYellow: #ffffd8;
+    --lavender: #eaebff;
+    --letra: dimgray;
+    --letrahability: floralwhite;
     --shadow: #f9f5f2;
+    --lightCyan: #e0fefe;
+    --water: #d3eeff;
 
 }
 
@@ -15,9 +18,8 @@
     font-size: 18px;
 }
 
-
 nav {
-    background-color: var(--bg-header);
+    background-color: var(--lavender);
     height: 80px;
     width: 100%;
 
@@ -44,13 +46,8 @@ nav li:hover {
     transform: scale(1.1);
 }
 
-nav ul li a:hover {
-    color: var(--green);
-}
-
 .checkbtn {
     font-size: 30px;
-    color: var(--green);
     float: right;
     line-height: 80px;
     margin-right: 40px;
@@ -70,14 +67,14 @@ nav ul li a:hover {
 
 
 header {
-    background-color: var(--bg-header);
+    background-color: var(--lavender);
 
 }
 
 
 .title,
 .icon,
-.imagegirl {
+.myphoto {
     display: flex;
     justify-content: center;
 }
@@ -85,7 +82,7 @@ header {
 
 .header {
     display: grid;
-    min-height: 85vh;
+    min-height: 80vh;
     grid-template-columns: 50% 50%;
     flex-direction: row;
 }
@@ -118,9 +115,9 @@ h1 {
 }
 
 .icon {
-    gap: 1em;
+    gap: 1rem;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .icon>a {
@@ -128,26 +125,40 @@ h1 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--orange);
+    background-color: var(--pink);
     display: flex;
-
-}
-.imagegirl{
-    padding-top: 2em;
+    justify-content: center;
 }
 
-/* Aplicando grid areas */
+img {
+    max-width: 100%;
+
+}
+
+.myphoto {
+    width: 80%;
+
+    margin-top: 1rem;
+
+    transform: translateX(20px);
+
+}
+
+.yo {
+    background-color: var(--pink);
+    border-radius: 50%;
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+
+}
+
 
 .supercontainer {
     border: 1px solid transparent;
-    padding: 5em 10em 0em 10em;
+    padding: 5rem 10rem 5rem 10rem;
     position: relative;
-    grid-template-rows: 25% 50% 25%;
 
-    grid-template-areas:
-        "aboutme aboutme aboutme aboutme"
-
-    ;
 }
 
 .supercontainer .me {
@@ -156,17 +167,24 @@ h1 {
 }
 
 .principaltable {
-    padding: 5em 10em 0em 10em;
+
+    padding: 5em 0em 0em 10em;
     position: relative;
+    max-width: 80vw;
+    min-height: 80vh;
 }
 
-.firtstable {
-    top: 50px;
-    z-index: 0;
+
+
+.subtitulo {
+    font-size: 40px;
+    font-weight: bolder;
+    color: var(lavender);
 }
 
 .orangecircle {
-    background-color: var(--orange);
+    background-color: var(--lightYellow);
+
     width: 14vw;
     height: 14vw;
     border-radius: 50%;
@@ -183,16 +201,10 @@ h1 {
     border-radius: 50%;
     position: absolute;
     z-index: -2;
-    background-color: var(--green);
+    background-color: var(--lavender);
     left: 15px;
     top: 10px;
 
-}
-
-.subtitulo {
-    font-size: 40px;
-    font-weight: bolder;
-    color: var(--green);
 }
 
 p {
@@ -202,19 +214,20 @@ p {
 
 .principaltable h2 {
     font-size: 40px;
-    color: var(--shadow);
+    color: black;
     text-align: start;
     padding-left: 1em;
+
 }
 
 .table {
-    border-collapse: separate;
     border-spacing: 2em;
-
 }
 
 .table td {
-    background-color: var(--bg-header);
+    background-color: var(--pink);
+    min-width: 12rem;
+    max-height: 5rem;
     padding: 1em 1em 1em 1em;
 }
 
@@ -223,76 +236,41 @@ p {
     text-align: left;
 }
 
-.table h2 {
+.table h3 {
+    color: var(--lightYellow);
+}
+
+.table p {
+    color: var(--letrahability);
+}
+
+.tech {
+    padding: 5rem 10rem 5rem 10rem;
+}
+
+.tech h2 {
     font-size: 40px;
+    color: black;
+    text-align: start;
+    margin: 1rem 0rem 3rem 0rem;
 }
 
 .myexp {
-    padding: 5em 10em 0em 10em;
-}
-
-.myexp>div {
-    display: grid;
-}
-
-.caja {
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    border: 50px solid transparent;
-}
-
-.caja h2:nth-child(1) {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    font-size: 40px;
-    color: var(--green);
-    text-align: end;
-    padding-bottom: 20px;
-    padding-top: 30px;
-}
-
-.caja div:nth-child(2) {
-    grid-column: 1/2;
-    grid-row: 2/3;
-}
-
-.caja div:nth-child(3) {
-    grid-column: 2/3;
-    grid-row: 2/3;
-
-}
-
-.caja div:nth-child(4) {
-    grid-column: 3/4;
-    grid-row: 2/3;
-    column-gap: 1fr;
-}
-
-.littlebox {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-content: center;
-    column-gap: 1fr;
-}
-
-.littlebox h5,
-h6 {
-    font-size: 12px;
-    color: var(--letra);
-    align-items: center;
-}
-
-.littlebox h4 {
-    font-size: 12px;
-}
-
-.littlebox ul:nth-child(3) {
     display: flex;
+    justify-content: center;
     align-items: center;
-    align-content: space-around;
-
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 3rem;
 }
 
+
+.myexp img {
+    width: 4rem;
+
+
+
+}
 
 .contenedor {
     position: relative;
@@ -300,11 +278,11 @@ h6 {
 
 }
 
-.cajita {
-    width: 100vw;
+.portbckgrnd {
+    width: 100%;
     position: absolute;
     z-index: 2;
-    background-color: var(--green);
+    background-color: var(--pink);
     left: calc(-50vw + 50%);
     height: 90%;
     top: 100px;
@@ -371,7 +349,7 @@ footer {
 
 footer h2 {
     font-size: 40px;
-    color: var(--green);
+    color: var(lavender);
 }
 
 .contact {
@@ -386,13 +364,13 @@ footer h2 {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: var(--orange);
+    background-color: var(--lightYellow);
     display: flex;
 }
 
 .contact .contactme {
     font-size: 14px;
-    color: var(--green);
+    color: var(lavender);
     justify-content: center;
 }
 
@@ -404,7 +382,7 @@ footer h2 {
 
 footer h3 {
     text-align: center;
-    color: var(--orange);
+    color: var(--water);
 }
 
 @media (max-width: 768px) {
@@ -421,7 +399,7 @@ footer h3 {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: var(--bg-header);
+        background: var(--pink);
         top: 80px;
         left: -100%;
         text-align: center;
@@ -462,10 +440,10 @@ footer h3 {
         gap: 2em;
     }
 
-    .imagegirl {
+    .myphoto {
         align-self: center;
     }
-    
+
 
     main {
         display: flex;
@@ -486,13 +464,11 @@ footer h3 {
 
     .principaltable {
         padding: 1em 2em 0em 2em;
-        position: relative;
+        max-width: 80vw;
     }
 
-
-
     .orangecircle {
-        background-color: var(--orange);
+        background-color: var(--lightYellow);
         width: 20vw;
         height: 20vw;
         border-radius: 50%;
@@ -509,39 +485,22 @@ footer h3 {
         border-radius: 50%;
         position: absolute;
         z-index: -2;
-        background-color: var(--green);
+        background-color: var(lavender);
         left: -10px;
         top: 0px;
     }
 
-
-
     .table {
-        border-collapse: separate;
-        border-spacing: 1.5em;
-        padding-top: 5em;
-    }
-
-    .firtstable {
-        overflow-y: auto;
-    }
-
-    .firtstable h2 {
-        position: absolute;
-        padding: 1em 0em 1em 0em;
-        font-size: 32px;
-        align-content: center;
+        overflow: scroll;
     }
 
     .table td {
-        background-color: var(--bg-header);
+        background-color: var(--pink);
         padding: 1em 1em;
-
     }
 
-    .table:nth-child(2) {
-        overflow-y: auto;
-    }
+
+
 
     /* EXPERIENCIA */
     .myexp {
@@ -576,7 +535,7 @@ footer h3 {
         grid-row: 4/5;
     }
 
-    .cajita {
+    .portbckgrnd {
         height: 90%;
     }
 
@@ -634,13 +593,13 @@ footer h3 {
 
     footer h3 {
         text-align: center;
-        color: var(--orange);
+        color: var(--lightYellow);
     }
 }
 
-@media (max-width: 425px){
+@media (max-width: 425px) {
     .orangecircle {
-    
+
         width: 30vw;
         height: 30vw;
         border-radius: 50%;
@@ -657,49 +616,52 @@ footer h3 {
         border-radius: 50%;
         position: absolute;
         z-index: -2;
-    
+
         left: -10px;
         top: 20px;
     }
 
-    .cajita{
+    .portbckgrnd {
         height: 80%;
     }
-    .yo{
+
+    .yo {
         width: 60vw;
         height: 50vh;
     }
-    
 
-  
+
+
 }
-@media (max-width:375px){
-    .cajita{
+
+@media (max-width:375px) {
+    .portbckgrnd {
         height: 70%;
     }
-    
-    .yo{
+
+    .yo {
         width: 50vh;
         height: 90vw;
     }
 }
 
-@media (max-width: 320px){
-   
-    .firtstable h2{
+@media (max-width: 320px) {
+
+    .firtstable h2 {
         font-size: 25px;
         padding: 1em 1em 0em 0em;
     }
-    
+
     footer {
         padding: 1em 1em 5em 1em;
     }
 
-    .contact{
+    .contact {
         padding-left: 1.5em;
     }
-    .yo{
+
+    .yo {
         width: 70vw;
         height: 50vh;
-    }    
+    }
 }
