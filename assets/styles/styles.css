@@ -65,6 +65,11 @@ nav li:hover {
 
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 
 header {
     background-color: var(--lavender);
@@ -130,27 +135,19 @@ h1 {
     justify-content: center;
 }
 
-img {
-    max-width: 100%;
-
-}
-
 .myphoto {
+    margin: auto;
+    background-color: var(--pink);
+    border-radius: 50%;
+    height: 80%;
     width: 80%;
-
-    margin-top: 1rem;
-
-    transform: translateX(20px);
-
+    overflow: hidden;
 }
 
 .yo {
-    background-color: var(--pink);
-    border-radius: 50%;
-    height: 90%;
-    width: 90%;
-    object-fit: cover;
-
+    height: 100vh;
+    display: flex;
+    transform: translate(-4rem, -3.5rem);
 }
 
 
@@ -220,6 +217,13 @@ p {
 
 }
 
+/* .tablecontainer {
+    overflow-x: scroll;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+} */
+
 .table {
     border-spacing: 2em;
 }
@@ -231,17 +235,16 @@ p {
     padding: 1em 1em 1em 1em;
 }
 
-.table th {
-    background-color: transparent;
-    text-align: left;
+.table td:nth-child(4) {
+    padding-top: 2rem;
 }
 
 .table h3 {
-    color: var(--lightYellow);
+    color: darkslategray;
 }
 
 .table p {
-    color: var(--letrahability);
+    color: darkslategrey;
 }
 
 .tech {
@@ -267,9 +270,6 @@ p {
 
 .myexp img {
     width: 4rem;
-
-
-
 }
 
 .contenedor {
@@ -283,7 +283,7 @@ p {
     position: absolute;
     z-index: 2;
     background-color: var(--pink);
-    left: calc(-50vw + 50%);
+    left: calc(-50vw + 50.6%);
     height: 90%;
     top: 100px;
 
@@ -305,14 +305,17 @@ p {
     border: 0px solid black;
     background-color: white;
     text-align: center;
-    padding: 1em 0em 2em 0em;
+    margin-top: 1rem;
+    padding: 1em 0.5em 2em 0.5em;
     border-radius: 3%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 
 .portafolio img {
-    width: 90%;
+    width: 14rem;
+    border-radius: 5px;
+    height: 8rem;
 }
 
 .portafolio div:nth-child(1) {
@@ -328,11 +331,12 @@ p {
 
 .portafolio h2 {
     font-size: 40px;
-    color: white;
+    color: black;
+
 }
 
 .portafolio p {
-    color: white;
+    color: rgb(95, 95, 95);
 }
 
 .portafolio div:nth-child(3) {
@@ -345,18 +349,25 @@ footer {
     display: grid;
     border: 8em solid transparent;
     row-gap: 4em;
+    overflow: hidden;
 }
 
 footer h2 {
     font-size: 40px;
-    color: var(lavender);
+
 }
 
 .contact {
     display: flex;
     justify-content: center;
     column-gap: 8em;
+    padding-top: 3rem;
 
+}
+
+.contactme {
+    display: grid;
+    justify-items: center;
 }
 
 .contact img {
@@ -364,14 +375,13 @@ footer h2 {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: var(--lightYellow);
-    display: flex;
+    background-color: var(--water);
+
 }
 
-.contact .contactme {
-    font-size: 14px;
-    color: var(lavender);
-    justify-content: center;
+.contact aside {
+    display: grid;
+    justify-items: center;
 }
 
 .info {
@@ -381,8 +391,26 @@ footer h2 {
 }
 
 footer h3 {
+    display: flex;
     text-align: center;
-    color: var(--water);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink);
+    background-color: var(--lightYellow);
+    width: 100%;
+    padding: 2rem;
+    left: calc(-50vw + 50.6%);
+    height: 25%;
+}
+
+@media (max-width:1024px) {
+    .tablecontainer {
+        overflow-x: scroll;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
