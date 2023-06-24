@@ -18,45 +18,51 @@
     font-size: 18px;
 }
 
-nav {
-    background-color: var(--lavender);
-    height: 80px;
-    width: 100%;
-
-}
-
-nav ul {
-    float: right;
-    margin-right: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-    padding-left: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-}
-
-nav li:hover {
-    transform: scale(1.1);
-}
-
-.checkbtn {
-    font-size: 30px;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
+.ham {
+    display: none;
     cursor: pointer;
-    display: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
 }
 
-#check {
-    display: none;
+.ham span {
+    display: block;
+    background-color: black;
+    height: 3px;
+    width: 28px;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--lavender);
+    padding: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    list-style-type: none;
+    transition: 0.3s;
+    margin: 1rem
+}
+
+.menu li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+}
+
+.menu li:hover {
+    background-color: var(--lightYellow);
+    border-radius: 5px;
+    border: 10px;
 }
 
 .container {
@@ -404,59 +410,154 @@ footer h3 {
     height: 25%;
 }
 
-@media (max-width:1024px) {
+@media (max-width:1440px) {
+
+    .myphoto {
+        border-radius: 50%;
+        height: 80%;
+        width: 70%;
+    }
+
+    footer h3 {
+        left: calc(-50vw + 50%);
+    }
+
+    .portbckgrnd {
+        left: calc(-50vw + 50%);
+    }
+}
+
+@media (max-width: 1024px) {
+    .menu li {
+        padding: 1rem 0.5rem;
+    }
+
+    h1 {
+        font-size: 70px;
+        padding: 0rem 0.5rem;
+    }
+
+    .myphoto {
+        height: 75%;
+        width: 80%;
+    }
+
+    .yo {
+        height: 90vh;
+    }
+
+    .icon {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .principaltable h2 {
+        transform: translateY(-1.5rem);
+    }
+
     .tablecontainer {
+        transform: translateY(-2rem);
+        width: 75vw;
         overflow-x: scroll;
         display: flex;
         justify-content: flex-start;
-        padding-left: 1rem;
+        padding-top: none;
+    }
+
+    .pic {
+        width: 15rem;
+        transform: translateX(-3rem)
+    }
+
+    .portafolio div:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+        transform: translateX(4.5rem);
+        width: 46vw;
+        padding: 4rem 0rem 0rem 1rem;
     }
 }
 
 @media (max-width: 768px) {
 
-    nav ul li a {
-        font-size: 20px;
+    body {
+        overflow: hidden;
     }
 
-    .checkbtn {
+    .ham {
         display: block;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        transition: 0.2s 0.1s;
     }
 
-    nav ul {
-        position: fixed;
+    .ham:hover {
+        transform: rotate(360deg);
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 0;
+        background-color: var(--lavender);
+    }
+
+    .menu {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 92vh;
+        margin: 0;
+        padding: 0;
         width: 100%;
-        height: 100vh;
-        background: var(--pink);
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
+        display: none;
+        opacity: 0;
     }
 
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
+    .menu li {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
     }
 
-    nav li a:hover {
-        background: none;
-        color: #f26440;
+    @keyframes showMenu {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
-    #check:checked~ul {
-        left: 0;
+    .menu.activado {
+        display: flex;
+        animation: showMenu 350ms ease-in-out both;
+    }
+
+    .br-1.animado {
+        transform: rotate(-45deg) translate(-10px, 8px);
+    }
+
+    .br-2.animado {
+        opacity: 0;
+    }
+
+    .br-3.animado {
+        transform: rotate(45deg) translate(-10px, -8px);
     }
 
     .header {
         text-align: center;
         display: flex;
         flex-direction: column;
+        padding-bottom: 4rem;
     }
 
     .title h1 {
-        font-size: 50px;
+        font-size: 40px;
         color: black;
         margin-top: 20px;
     }
@@ -464,35 +565,35 @@ footer h3 {
     .icon {
         display: flex;
         justify-content: center;
-        margin-top: 50px;
+        align-items: start;
+        padding: 2rem 0rem;
         gap: 2em;
     }
 
     .myphoto {
-        align-self: center;
+        width: 50%;
+        height: 70vh;
     }
 
-
-    main {
-        display: flex;
-        flex-direction: column;
-    }
-
-    main .subtitulo {
-        font-size: 32px;
-
+    .yo {
+        transform: translate(-3.5rem, -2rem);
     }
 
     .supercontainer {
-        border: 1px solid transparent;
-        padding: 1em 2em 1em 2em;
+        border: 0;
+        padding: 4rem 0rem 5rem 3rem;
         margin-top: 2em;
 
     }
 
-    .principaltable {
-        padding: 1em 2em 0em 2em;
-        max-width: 80vw;
+    .principaltable h2 {
+        padding: 0rem 0rem 1rem 0rem;
+        transform: translate(-2.5rem, -2.5rem);
+    }
+
+    .tablecontainer {
+        width: 80vw;
+        transform: translate(-5rem, -4rem);
     }
 
     .orangecircle {
@@ -527,66 +628,25 @@ footer h3 {
         padding: 1em 1em;
     }
 
-
-
-
-    /* EXPERIENCIA */
-    .myexp {
-        padding: 1em 2em 0em 2em;
+    .portafolio div:nth-child(1) {
+        transform: translate(-10rem, -0.5rem);
     }
 
-    .caja {
-        border: none;
+    .portafolio div:nth-child(2) {
+        width: 50vw;
+        transform: translate(-0.25rem, -0.5rem);
     }
 
-    .littlebox {
-        margin-bottom: 20px;
+    .portafolio div:nth-child(3) {
+        transform: translate(-3rem, -0.5rem);
     }
 
-    .littlebox ul:nth-child(3) {
-        justify-content: flex-end;
+
+    .tech h2 {
+        transform: translateX(-5rem);
+        padding-bottom: 0.5rem;
     }
 
-    .caja div:nth-child(2) {
-        grid-column: 1/4;
-        grid-row: 2/3;
-    }
-
-    .caja div:nth-child(3) {
-        grid-column: 1/4;
-        grid-row: 3/4;
-
-    }
-
-    .caja div:nth-child(4) {
-        grid-column: 1/4;
-        grid-row: 4/5;
-    }
-
-    .portbckgrnd {
-        height: 90%;
-    }
-
-    .contenedor {
-        padding: 1em 2em 0em 2em;
-        height: 50em;
-    }
-
-    .portafolio {
-        display: flex;
-        flex-direction: column;
-        row-gap: 1em;
-    }
-
-    .portafolio:nth-child(3) {
-        margin-bottom: 20px;
-    }
-
-    .folio {
-        margin-bottom: 1em;
-    }
-
-    /* ------------------------------------------------------------ */
     footer {
         display: flex;
         flex-direction: column;
@@ -597,7 +657,8 @@ footer h3 {
     .contact {
         column-gap: 2em;
         border: 0;
-        padding-top: 2em;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
     }
 
     .contacto {
@@ -621,45 +682,78 @@ footer h3 {
 
     footer h3 {
         text-align: center;
-        color: var(--lightYellow);
+        color: var(--pink);
     }
 }
 
 @media (max-width: 425px) {
-    .orangecircle {
+    .myphoto {
+        width: 85%;
+        height: 70vh;
+    }
 
+    .supercontainer {
+        padding: 4rem;
+    }
+
+    .orangecircle {
         width: 30vw;
         height: 30vw;
-        border-radius: 50%;
-        position: absolute;
-        z-index: -1;
-        left: -5vw;
-        top: 40px;
-
     }
 
     .greencircle {
         width: 100vw;
         height: 100vw;
-        border-radius: 50%;
-        position: absolute;
-        z-index: -2;
+    }
 
-        left: -10px;
-        top: 20px;
+    .principaltable h2 {
+        transform: translate(-4rem, -3rem);
+    }
+
+    .tablecontainer {
+        width: 80vw;
+        transform: translate(-6rem, -5rem);
+    }
+
+    .tech {
+        padding: 3rem;
+    }
+
+    .tech h2 {
+        width: 100vw;
+        padding: 0rem 0rem 2rem 3rem;
+        padding-left: 4rem;
+    }
+
+    .contenedor {
+        height: 110vh;
     }
 
     .portbckgrnd {
-        height: 80%;
+        height: 110%;
     }
 
-    .yo {
-        width: 60vw;
-        height: 50vh;
+    .portafolio div:nth-child(1) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+
     }
 
+    .portafolio div:nth-child(2) {
+        grid-column: 1/3;
+        grid-row: 1/2;
+        width: 90vw;
+        padding: 1rem;
+        padding-bottom: 1rem;
+        transform: translateX(-9rem);
 
+    }
 
+    .portafolio div:nth-child(3) {
+        grid-column: 1/3;
+        grid-row: 3/4;
+
+    }
 }
 
 @media (max-width:375px) {
