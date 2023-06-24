@@ -480,10 +480,6 @@ footer h3 {
 
 @media (max-width: 768px) {
 
-    body {
-        overflow: hidden;
-    }
-
     .ham {
         display: block;
         position: absolute;
